@@ -11,13 +11,13 @@ const SignIn = () => {
       if (additionalUserInfo.isNewUser) {
         await database.ref(`/profiles/${user.uid}`).set({
           name: user.displayName,
-          createdAt: firebase.database.ServerValue.TIMESTAMP
-        })
+          createdAt: firebase.database.ServerValue.TIMESTAMP,
+        });
       }
 
       Alert.success('Signed in', 4000);
     } catch (err) {
-      Alert.info(err.message, 4000);
+      Alert.error(err.message, 4000);
     }
   };
 
