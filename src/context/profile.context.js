@@ -8,12 +8,10 @@ export const ProfileProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    
     let userRef;
 
     const authUnsub = auth.onAuthStateChanged(authObj => {
       if (authObj) {
-
         userRef = database.ref(`profiles/${authObj.uid}`);
         userRef.on('value', snap => {
           const { name, createdAt, avatar } = snap.val();
@@ -30,8 +28,7 @@ export const ProfileProvider = ({ children }) => {
           setIsLoading(false);
         });
       } else {
-
-        if(userRef) {
+        if (userRef) {
           userRef.off();
         }
 
@@ -43,14 +40,14 @@ export const ProfileProvider = ({ children }) => {
     return () => {
       authUnsub();
 
-      if(userRef) {
+      if (userRef) {
         userRef.off();
       }
-    }
+    };
   }, []);
 
   return (
-    <ProfileContext.Provider value={{isLoading, profile}}>
+    <ProfileContext.Provider value={{ isLoading, profile }}>
       {children}
     </ProfileContext.Provider>
   );

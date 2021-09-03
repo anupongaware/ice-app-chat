@@ -28,7 +28,6 @@ const Dashboard = ({ onSignOut }) => {
       <Drawer.Header>
         <Drawer.Title>Dashboard</Drawer.Title>
       </Drawer.Header>
-
       <Drawer.Body>
         <h3>Hey, {profile.name} </h3>
         <ProviderBlock />
