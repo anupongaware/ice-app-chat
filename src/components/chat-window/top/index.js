@@ -2,7 +2,6 @@ import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { ButtonToolbar, Icon } from 'rsuite';
 import { useCurrentRoom } from '../../../context/current-room.context';
-import { RoomsProvider } from '../../../context/rooms.context';
 import { useMediaQuery } from '../../../misc/custom-hook';
 import RoomInfBtnModal from './RoomInfBtnModal';
 
