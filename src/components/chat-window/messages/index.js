@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { useState } from 'react/cjs/react.development';
 import { database } from '../../../misc/firebase';
 import { transformToArrWithId } from '../../../misc/helper';
 import MessageItem from './MessageItem';
